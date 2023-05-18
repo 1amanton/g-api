@@ -19,7 +19,7 @@ const Chat = ({ socket }) => {
         console.log("from useefect empty array")
 
         socket.emit('showMessages', { id: socket.id, socketID: socket.id })
-        // socket.on('msgResponse', (data) => setMessages(() => [...data]))
+        socket.on('msgResponse', (data) => setMessages(() => [...data]))
     }, [])
 
     useEffect(() => {
