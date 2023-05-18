@@ -31,10 +31,7 @@ app.get('api', (res, req) => {
 
 
 socketIO.on('connection', (socket) => {
-    console.log(`user connected ${socket.id}`)
-    
-
-    
+    console.log(`user connected ${socket.id}`)    
 
     socket.on('showMessages', (data) => {
         
@@ -42,24 +39,20 @@ socketIO.on('connection', (socket) => {
                
         restAPI.webhookService.startReceivingNotifications() 
         restAPI.webhookService.onReceivingMessageText((body) => {
-        msgs.push(body)
-        console.log("EMIIIIIIIIIIIIT" , body)
+            msgs.filter((msg) => {
+                if(body.idMessage === msg.idMessage) {
+                    msgs.splice(msgs.indexOf(msg), 1)
+                    console.log(msg)
+                }                
+            })
+            
+            console.log("EMIIIIIIIIIIIIT" , body)
+            msgs.push(body)
 
         //restAPI.webhookService.deleteNotification(body.receiptId)
-
-        // msgs.filter(msg => {
-        //     if(msg.idMessage === body.idMessage) {
-        //         msgs.splice(msgs.indexOf(msg), 1)
-        //     }
-        // })
-        // console.log("SSSSSSS", msgs)
         //restAPI.webhookService.stopReceivingNotifications();
         //console.log("Notifications is about to stop in 20 sec if no messages will be queued...")
         })
-
-        // restAPI.webhookService.receiveNotification((body) => {
-        //     console.log("MSGGGGGG" , body)          
-        // })
 
         socketIO.emit('response', msgs)
     })
@@ -67,7 +60,7 @@ socketIO.on('connection', (socket) => {
 
     socket.on('disconnect', () => {
         console.log(`user disconnected ${socket.id}`)
-                
+        
     })
 })
 

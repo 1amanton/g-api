@@ -47,7 +47,7 @@ export const App = () => {
     <div className="App">
 
       <div className="right">
-        ZAZA
+        INC MSGS
         {messages.map((msg, idx) => <h5 key={idx}>{msg.messageData.textMessageData.textMessage}  + {msg.idMessage}</h5>)}
       </div>
 
