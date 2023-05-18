@@ -13,6 +13,8 @@ let restAPI = whatsAppClient.restAPI(({
     apiTokenInstance: "dec4dce63ce04483b03be900646acb00c01379f0218b4ea98e"
 }))
 
+// let restAPI = null
+
 
 const socketIO = require('socket.io') (http, {
     cors: {
@@ -32,6 +34,17 @@ app.get('api', (res, req) => {
 
 socketIO.on('connection', (socket) => {
     console.log(`user connected ${socket.id}`)    
+
+    socket.on('loginData', (data) => {
+        console.log('user ins', data.idInstance)
+
+        // console.log(restAPI)
+
+        // restAPI = whatsAppClient.restAPI(({
+        //     idInstance: data.idInstance,
+        //     apiTokenInstance: data.apiTokenInstance
+        // }))
+    })
 
     socket.on('showMessages', (data) => {
         
@@ -56,6 +69,23 @@ socketIO.on('connection', (socket) => {
 
         socketIO.emit('response', msgs)
     })
+
+
+    socket.on('userLogout', (data) => {
+                // принимаем сокетид юзера, ищем его в массиве юзеров и удаляем по ид
+                console.log("logout", data)
+
+                // console.log(users)
+                // users.filter(user => {
+                //     if(user.socketID === data) {
+                //         console.log(user, data)
+                //         users.splice(users.indexOf(user), 1) 
+                //         console.log('from deleted logout', users)
+                                      
+                //     }
+                //     console.log(users)
+                // })
+            })
 
 
     socket.on('disconnect', () => {
