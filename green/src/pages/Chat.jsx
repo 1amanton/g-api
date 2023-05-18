@@ -9,18 +9,24 @@ const Chat = ({ socket }) => {
     console.log("CHAAAAAAAAT LOADED")
 
 
-    // useEffect(() => {
-    //     handleEmit()
-    // }, [])
-
     const [messages, setMessages] = useState([])
 
     const [outMessages, setOutMessages] = useState([])
 
     const [text, setText] = useState('')
 
+    useEffect(() => {
+        console.log("from useefect empty array")
 
+        socket.emit('showMessages', { id: socket.id, socketID: socket.id })
+        // socket.on('msgResponse', (data) => setMessages(() => [...data]))
+    }, [])
 
+    useEffect(() => {
+        console.log("from useefect")
+        socket.on('msgResponse', (data) => setMessages(() => [...data]))
+
+    }, [socket, messages])
 
 
     const handleEmit = () => {
@@ -50,6 +56,7 @@ const Chat = ({ socket }) => {
         navigate('/')
     }
 
+    console.log(messages)
 
     return (
         <div >

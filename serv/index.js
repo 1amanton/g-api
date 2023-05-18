@@ -38,18 +38,12 @@ socketIO.on('connection', (socket) => {
     socket.on('loginData', (data) => {
         console.log('user ins', data.idInstance)
 
-        // console.log(restAPI)
-
-        // restAPI = whatsAppClient.restAPI(({
-        //     idInstance: data.idInstance,
-        //     apiTokenInstance: data.apiTokenInstance
-        // }))
     })
 
     socket.on('showMessages', (data) => {
         
         console.log(`ShowMSG from SERV ${data.socketID}`)
-               
+
         restAPI.webhookService.startReceivingNotifications() 
         restAPI.webhookService.onReceivingMessageText((body) => {
             msgs.filter((msg) => {
@@ -61,63 +55,27 @@ socketIO.on('connection', (socket) => {
             
             console.log("EMIIIIIIIIIIIIT" , body)
             msgs.push(body)
-
+            socketIO.emit('msgResponse', msgs)
+        })
+               
         //restAPI.webhookService.deleteNotification(body.receiptId)
         //restAPI.webhookService.stopReceivingNotifications();
         //console.log("Notifications is about to stop in 20 sec if no messages will be queued...")
-        })
-
-        socketIO.emit('response', msgs)
+        
     })
 
 
     socket.on('userLogout', (data) => {
-                // принимаем сокетид юзера, ищем его в массиве юзеров и удаляем по ид
-                console.log("logout", data)
-
-                // console.log(users)
-                // users.filter(user => {
-                //     if(user.socketID === data) {
-                //         console.log(user, data)
-                //         users.splice(users.indexOf(user), 1) 
-                //         console.log('from deleted logout', users)
-                                      
-                //     }
-                //     console.log(users)
-                // })
-            })
+        console.log("logout", data)
+    })
 
 
     socket.on('disconnect', () => {
-        console.log(`user disconnected ${socket.id}`)
-        
+        console.log(`user disconnected ${socket.id}`)        
     })
 })
-
-
-
 
 
 http.listen(PORT, () => {
     console.log(`Started. App listening on port 5000!`)
 });
-
-
-
-
-
-// const webHookAPI = whatsAppClient.webhookAPI(http, {
-//     cors: {
-//         origin: "http://localhost:3000"
-//     }
-// })
-
-// const webHookAPI = whatsAppClient.webhookAPI(app, {
-//     cors: {
-//         origin: "http://localhost:3000"
-//     }
-// })
-
-// webHookAPI.onIncomingMessageText((data, idInstance, idMessage, sender, typeMessage, textMessage) => {
-//     console.log(`Incoming Notification data ${JSON.stringify(data)}`)
-// })
