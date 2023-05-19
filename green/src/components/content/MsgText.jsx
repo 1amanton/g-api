@@ -1,10 +1,10 @@
 import { useState } from 'react'
 import classes from './MsgText.module.scss'
 
-export const MsgText = ({ socket }) => {
+export const MsgText = ({ socket, outMessages, setOutMessages }) => {
 
     const [text, setText] = useState('')
-    const [outMessages, setOutMessages] = useState([])
+
 
     const handleChangeMsg = (e) => {
         e.preventDefault()
@@ -13,6 +13,7 @@ export const MsgText = ({ socket }) => {
 
     const handleSend = (e) => {
         e.preventDefault()
+        console.log("addmsg", outMessages)
         setOutMessages([...outMessages, {
             id: socket.id,
             text: text
@@ -35,7 +36,7 @@ export const MsgText = ({ socket }) => {
                 <input type="text" value={text} onChange={handleChangeMsg} />
                 <button>send</button>
             </form>
-            {outMessages.map((msg, idx) => <h5 key={idx}>{msg.text}</h5>)}
+
 
         </div>
     )

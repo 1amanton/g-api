@@ -5,7 +5,7 @@ import { MsgText } from './MsgText'
 import { SetNumber } from './SetNumber'
 
 
-export const SendMsg = ({ socket }) => {
+export const SendMsg = ({ socket, outMessages, setOutMessages }) => {
 
     const [isNumberSetted, setIsNumberSetted] = useState(false)
 
@@ -13,9 +13,6 @@ export const SendMsg = ({ socket }) => {
     const handleEmit = () => {
         socket.emit('showMessages', { id: socket.id, socketID: socket.id })
     }
-
-
-
 
 
     return (
@@ -26,7 +23,7 @@ export const SendMsg = ({ socket }) => {
             </div>
 
             <div>
-                {isNumberSetted ? <MsgText socket={socket} /> : <SetNumber socket={socket} setIsNumberSetted={setIsNumberSetted} />}
+                {isNumberSetted ? <MsgText socket={socket} outMessages={outMessages} setOutMessages={setOutMessages} /> : <SetNumber socket={socket} setIsNumberSetted={setIsNumberSetted} />}
             </div>
         </div>
     )

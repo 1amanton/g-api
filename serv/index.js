@@ -23,6 +23,7 @@ const socketIO = require('socket.io') (http, {
 })
 
 let msgs = []
+let currentMsgs = [{messageData: { typeMessage: 'textMessage', textMessageData: { textMessage: 'Т' } }}]
 let sendNumber = ""
 
 
@@ -56,14 +57,28 @@ socketIO.on('connection', (socket) => {
             
             console.log("EMIIIIIIIIIIIIT" , body)
             msgs.push(body)
+
+            msgs.filter((msg) => {
+                if(msg.senderData.chatId === `${sendNumber}@c.us`) {
+                    console.log("СОВПАЛО")
+                    currentMsgs.push(msg)
+                }
+            })
+
+            socketIO.emit('currentMsgResponse', currentMsgs)
             socketIO.emit('msgResponse', msgs)
         })
-               
+
+
         //restAPI.webhookService.deleteNotification(body.receiptId)
         //restAPI.webhookService.stopReceivingNotifications();
         //console.log("Notifications is about to stop in 20 sec if no messages will be queued...")
         
     })
+
+    // socket.on('showCurrentMessages', (data) => {
+    // })
+
 
     socket.on('setSendNumber', (data) => {
         console.log("SENDUSERRRRRR", data.sendNumber)
@@ -74,7 +89,7 @@ socketIO.on('connection', (socket) => {
 
     socket.on('sendMsg', (text) => {
 
-        console.log("MESG", text)
+        console.log("I SEND MSG", text)
         restAPI.message.sendMessage(`${sendNumber}@c.us`, null, text)
         .then((data) => {
             console.log('responsemsg', text,  data);
@@ -83,10 +98,7 @@ socketIO.on('connection', (socket) => {
             console.error('error from send msg', e)
         });
 
-
-
         socketIO.emit('sendMsgEv')
-
     })
 
 
