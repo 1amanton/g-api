@@ -59,7 +59,7 @@ export const Home = () => {
                     <label htmlFor="token" className={classes.form__label}>Token</label>
                 </div>
 
-                <Login name={"Login"} />
+                <Login name={"Login"} setColor={"#38ef7d"} />
 
 
             </form>

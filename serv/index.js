@@ -22,7 +22,8 @@ const socketIO = require('socket.io') (http, {
     }
 })
 
-const msgs = []
+let msgs = []
+let sendNumber = ""
 
 
 app.get('api', (res, req) => {
@@ -62,6 +63,30 @@ socketIO.on('connection', (socket) => {
         //restAPI.webhookService.stopReceivingNotifications();
         //console.log("Notifications is about to stop in 20 sec if no messages will be queued...")
         
+    })
+
+    socket.on('setSendNumber', (data) => {
+        console.log("SENDUSERRRRRR", data.sendNumber)
+        sendNumber = data.sendNumber
+
+        socketIO.emit('sendNumberSeted')
+    } )
+
+    socket.on('sendMsg', (text) => {
+
+        console.log("MESG", text)
+        restAPI.message.sendMessage(`${sendNumber}@c.us`, null, text)
+        .then((data) => {
+            console.log('responsemsg', text,  data);
+        })
+        .catch(e => {
+            console.error('error from send msg', e)
+        });
+
+
+
+        socketIO.emit('sendMsgEv')
+
     })
 
 
