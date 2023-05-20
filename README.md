@@ -18,33 +18,34 @@
 ## Как использовать
 Для входа в приложение введите:
 
-<img src="https://sun9-9.userapi.com/impg/5cNLTAFjp1xjf_hFKIOV0IxqIxgluPOeb6JHew/J_tewLX_KSs.jpg?size=928x711&quality=96&sign=e65aac440717531131733a905cb131ef&type=album">
-
 Имя и данные инстанса из GEEN API
 
 IdInstance в поле Id
 
 ApiTokenInstance в поле Token
 
+<img src="https://sun9-9.userapi.com/impg/5cNLTAFjp1xjf_hFKIOV0IxqIxgluPOeb6JHew/J_tewLX_KSs.jpg?size=928x711&quality=96&sign=e65aac440717531131733a905cb131ef&type=album">
+
 Эти данные будут хранится в Local Storage.
 
-<img src="https://sun9-38.userapi.com/impg/NZYd6DTwiZhwZup5nc5V6jkO5VwYLw01Th6Kig/l7hVvxh1GvA.jpg?size=476x463&quality=96&sign=30e944045d8f0f55d33c3182538b871e&type=album">
 
 Слева отображаются все входящие сообщения.
 
-<img src="https://sun9-80.userapi.com/impg/rGgSw0il-sD0HIASSVgdxYv8q2BfBghMlLhzHA/YdYrwIJipv0.jpg?size=1430x121&quality=96&sign=cabfd59305e31bb6fa623dbacd2b1d8d&type=album">
+<img src="https://sun9-38.userapi.com/impg/NZYd6DTwiZhwZup5nc5V6jkO5VwYLw01Th6Kig/l7hVvxh1GvA.jpg?size=476x463&quality=96&sign=30e944045d8f0f55d33c3182538b871e&type=album">
 
 Чтобы начать чат с пользователем введите его номер телефона.
 
-Клиент отправит номер телефона собеседника на сервер и сохранит для последующих запросов отправки сообщений, и вывода входящих сообщений от текущего собеседника.
-
 <img src="https://sun9-80.userapi.com/impg/rGgSw0il-sD0HIASSVgdxYv8q2BfBghMlLhzHA/YdYrwIJipv0.jpg?size=1430x121&quality=96&sign=cabfd59305e31bb6fa623dbacd2b1d8d&type=album">
+
+Клиент отправит номер телефона собеседника на сервер и сохранит для последующих запросов отправки сообщений, и вывода входящих сообщений от текущего собеседника.
 
 Теперь мы можем отправлять сообщения. Отправленное сообщение пользователь получит в свой WhatsApp.
 
-<img src="https://sun9-65.userapi.com/impg/1yhj3ENDHTvCbKCGKjT-lh3Hpc_P0ydJTM212w/V0LES5nWfyQ.jpg?size=1439x766&quality=96&sign=52b856b7f9b7bc212cb139cc03c230c8&type=album">
+<img src="https://sun9-49.userapi.com/impg/5DZszklAYf83-DjZVTGcFkK5L8yTbALDwjtCdA/IWxjrhbHI1U.jpg?size=1427x122&quality=96&sign=abdc76b3a82210d0cdd21bc07864f4e6&type=album">
 
 В чат будут приходить сообщения из WhatsApp.
+
+<img src="https://sun9-65.userapi.com/impg/1yhj3ENDHTvCbKCGKjT-lh3Hpc_P0ydJTM212w/V0LES5nWfyQ.jpg?size=1439x766&quality=96&sign=52b856b7f9b7bc212cb139cc03c230c8&type=album">
 
 ## Установка проекта
 
