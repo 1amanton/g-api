@@ -14,7 +14,10 @@ export const Nav = ({ socket }) => {
     return (
         <div className={classes.nav}>
             <div className={classes.logo}></div>
-            <button className={classes.logout} onClick={handleLogout}>Покинуть чат</button>
+            <div className={classes.logoutSection} onClick={handleLogout}>
+                <h4 name='logout' id='logout' className={classes.logout}>Покинуть чат</h4>
+                <label htmlFor="logout"><img className={classes.lblImg} src="https://allmakers.fr/wp-content/uploads/2021/03/envoi_fichier-150x150.png" alt="" /></label>
+            </div>
         </div>
     )
 }

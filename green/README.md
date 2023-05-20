@@ -1,70 +1,69 @@
-# Getting Started with Create React App
+<h1 align="center">MESSENGER</h1>
+<h3 align="center">Тестовое задание на должность - Фронтенд разработчик React в GREEN-API</h3>
+  
+<img src="https://sun9-76.userapi.com/impg/kKo8i8bmwH_-wRZ12d1vhXTZEs8WwJPs02Sskg/ZvrSONXoN20.jpg?size=1919x976&quality=96&sign=98eb1750c422ebdeb3a8fa225aacf62a&type=album">
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Описание
+Мессенджер на базе GREEN API.
 
-## Available Scripts
+## О проекте
+В приложении реализованы сервер и клиент.
 
-In the project directory, you can run:
+Поддержка входящих/исходящих WhatsApp уведомлений.
 
-### `npm start`
+Сервер принимает данные с GREEN API и передаёт их на клиент по установленному Websocket соединению.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+На сервере фильтруются данные и передаются в компоненты клиента.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Как использовать
+Для входа в приложение введите:
 
-### `npm test`
+<img src="https://sun9-9.userapi.com/impg/5cNLTAFjp1xjf_hFKIOV0IxqIxgluPOeb6JHew/J_tewLX_KSs.jpg?size=928x711&quality=96&sign=e65aac440717531131733a905cb131ef&type=album">
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Имя и данные инстанса из GEEN API
 
-### `npm run build`
+IdInstance в поле Id
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+ApiTokenInstance в поле Token
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Эти данные будут хранится в Local Storage.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+<img src="https://sun9-38.userapi.com/impg/NZYd6DTwiZhwZup5nc5V6jkO5VwYLw01Th6Kig/l7hVvxh1GvA.jpg?size=476x463&quality=96&sign=30e944045d8f0f55d33c3182538b871e&type=album">
 
-### `npm run eject`
+Слева отображаются все входящие сообщения.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+<img src="https://sun9-80.userapi.com/impg/rGgSw0il-sD0HIASSVgdxYv8q2BfBghMlLhzHA/YdYrwIJipv0.jpg?size=1430x121&quality=96&sign=cabfd59305e31bb6fa623dbacd2b1d8d&type=album">
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Чтобы начать чат с пользователем введите его номер телефона.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Клиент отправит номер телефона собеседника на сервер и сохранит для последующих запросов отправки сообщений, и вывода входящих сообщений от текущего собеседника.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+<img src="https://sun9-80.userapi.com/impg/rGgSw0il-sD0HIASSVgdxYv8q2BfBghMlLhzHA/YdYrwIJipv0.jpg?size=1430x121&quality=96&sign=cabfd59305e31bb6fa623dbacd2b1d8d&type=album">
 
-## Learn More
+Теперь мы можем отправлять сообщения. Отправленное сообщение пользователь получит в свой WhatsApp.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+<img src="https://sun9-65.userapi.com/impg/1yhj3ENDHTvCbKCGKjT-lh3Hpc_P0ydJTM212w/V0LES5nWfyQ.jpg?size=1439x766&quality=96&sign=52b856b7f9b7bc212cb139cc03c230c8&type=album">
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+В чат будут приходить сообщения из WhatsApp.
 
-### Code Splitting
+## Установка проекта
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Сервер слушает порт 5000
 
-### Analyzing the Bundle Size
+Запускаем сервер 
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+```
+cd .\serv\
+npm install
+npm start
 
-### Making a Progressive Web App
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Запускаем клиент
 
-### Advanced Configuration
+```
+cd .\green\
+npm install
+npm start
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+```

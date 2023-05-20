@@ -1,12 +1,12 @@
 .chat {
-    background-color: orangered;
+    background-color:   rgb(196, 194, 194);
     display: flex;
     height: calc(100vh - 205px);
+    overflow: hidden;
 
 
     .left {
         flex: 1;
-        background-color: red;
         // height: 800px;
         display: flex;
         flex-direction: column;
@@ -16,11 +16,10 @@
 
 
         .msg {            
-            background-color: rgb(164, 229, 164);
+            background-color: rgb(121, 186, 121);
             margin-left: 16px;
             padding: 16px 20px 16px 30px;     
             border-radius: 10px;
-
         }
 
     }

@@ -11,23 +11,14 @@
 
     .left {
         flex: 1;
-        background-color: aqua;
+        background-color: #1b9d53;
         height: 100vh;
         border-right: 1px solid black;
-
     }
 
 
     .right {
-        flex: 3;
-        background-color: bisque;
-        // height: 100vh;
-        
+        flex: 3;        
     }
 
-}
-
-
-.logout {
-    background-color: green;
 }

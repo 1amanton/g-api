@@ -51,7 +51,7 @@ socketIO.on('connection', (socket) => {
             msgs.filter((msg) => {
                 if(body.idMessage === msg.idMessage) {
                     msgs.splice(msgs.indexOf(msg), 1)
-                    console.log(msg)
+                    console.log('zaa', msg)
                 }                
             })
             
@@ -59,8 +59,8 @@ socketIO.on('connection', (socket) => {
             msgs.push(body)
 
             msgs.filter((msg) => {
-                if(msg.senderData.chatId === `${sendNumber}@c.us`) {
-                    console.log("СОВПАЛО")
+                if(msg.senderData.sender === `${sendNumber}@c.us`) {
+                    console.log(`СОВПАЛО `, msg.senderData.chatId)
                     currentMsgs.push(msg)
                 }
             })

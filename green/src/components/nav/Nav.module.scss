@@ -4,13 +4,40 @@
     justify-content: space-between;
     padding: 12px;
     min-height: 80px;
-    border-bottom: 1px solid black  ;
+    border-bottom: 1px solid black;
+    background-color: rgb(23, 24, 24);
 
 
     .logo {
         height: 60px;
         width: 60px;
         border-radius: 50%;
-        background-color: black;
+        background-color: white;
+    }
+
+    .logoutSection {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        background-color: rgb(13, 100, 71);
+        padding: 4px 8px;
+        border-radius: 8px;
+        cursor: pointer;
+
+        &:hover {
+            background-color: rgb(193, 53, 35);
+            color: white;
+        }
+
+    }
+
+    .logout {
+
+    }
+
+    .lblImg {
+        width: 35px;
+        height: 35px;
+        cursor: pointer;
     }
 }

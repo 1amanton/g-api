@@ -29,7 +29,7 @@ export const Home = () => {
 
     return (
         <div className={classes.home}>
-            <h1 className={classes.title}>MESSAGER</h1>
+            <h1 className={classes.title}>MESSENGER</h1>
             <form onSubmit={handleSubmit} className={classes.loginForm}>
 
                 <div className={classes.form__group}>

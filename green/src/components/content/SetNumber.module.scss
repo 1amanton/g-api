@@ -1,12 +1,12 @@
 $primary: #11998e;
-$secondary: #38ef7d;
+$secondary: #2cc768;
 $white: #fff;
 $gray: #1b9d7c;
 .form__group {
   position: relative;
   padding: 15px 0 0;
-  margin-top: 10px;
   width: 100%;
+
 }
 
 .form__field {
@@ -16,7 +16,7 @@ $gray: #1b9d7c;
   border-bottom: 2px solid $gray;
   outline: 0;
   font-size: 1.3rem;
-  color: $white;
+  color: black;
   padding: 7px 0;
   background: transparent;
   cursor: pointer;
@@ -29,7 +29,7 @@ $gray: #1b9d7c;
   &:placeholder-shown ~ .form__label {
     font-size: 1.3rem;
     cursor: text;
-    top: 20px;
+    top: 8px;
   }
 }
 
@@ -63,31 +63,41 @@ $gray: #1b9d7c;
   &:required,&:invalid { box-shadow:none; }
 }
 
+.setNumber {
 
-.home {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: rgb(23, 24, 24);
-    width: 800px;
-    height: 600px;
-    border-radius: 16px;
-    flex-direction: column;
+    .form {
+        display: flex;
+        align-items: center;
+        gap: 48px;
+        padding:0 48px;
+
+        .send {
+
+            cursor: pointer;
+            background-color: #1b9d53;
+            border: none;
+            font-weight: bold;
+            font-size: 20px;
+            padding: 12px 20px;
+            border-radius: 16px;
+            color: white;
+
+            &:hover {
+              background-color: #20b862;
+            }
+        }
+
+        .spn {
+            margin-top: 4px;
+            font-weight: bold;
+            font-size: 1.3rem;
+            color: #1b9d53;
+
+        }
+    }
 }
 
-.loginForm {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    gap: 12px;
-    
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
 }
-
-
-.title {
-    color: $secondary;
-    font-size: 32px;
-    margin-bottom: 48px;
-}
-

@@ -1,6 +1,5 @@
 import { useState } from 'react'
 import classes from './SendMsg.module.scss'
-import { Zzz } from './Zzz'
 import { MsgText } from './MsgText'
 import { SetNumber } from './SetNumber'
 
@@ -18,9 +17,9 @@ export const SendMsg = ({ socket, outMessages, setOutMessages }) => {
     return (
         <div className={classes.send}>
 
-            <div>
-                ПОЛЬЗОВАТЕЛЬ {isNumberSetted ? "УСАНОВИЛ" : "НЕ УСТАНОВИЛ"}
-            </div>
+            {/* <div>
+                {isNumberSetted ? "Чат с пользователем " : "НЕ УСТАНОВИЛ"}
+            </div> */}
 
             <div>
                 {isNumberSetted ? <MsgText socket={socket} outMessages={outMessages} setOutMessages={setOutMessages} /> : <SetNumber socket={socket} setIsNumberSetted={setIsNumberSetted} />}

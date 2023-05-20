@@ -28,16 +28,18 @@ export const MsgText = ({ socket, outMessages, setOutMessages }) => {
 
 
     return (
-        <div>
-            MSGTEXT
+        <div className={classes.msgtext}>
+            <form className={classes.form} onSubmit={handleSend}>
+                <div className={classes.form__group}>
+                    <input type="input" className={classes.form__field} placeholder="Введите сообщение" name="msg" id='msg'
+                        required
+                        value={text} onChange={handleChangeMsg}
+                    />
+                    <label htmlFor="msg" className={classes.form__label}>Ваше сообщение</label>
 
-
-            <form onSubmit={handleSend}>
-                <input type="text" value={text} onChange={handleChangeMsg} />
-                <button>send</button>
+                </div>
+                <button className={classes.send}>Отправить</button>
             </form>
-
-
         </div>
     )
 }
